@@ -1,0 +1,8 @@
+# 忽略操作系统的杂文件
+Thumbs.db
+.DS_Store
+*.swp
+
+# 忽略临时脚本
+*.ps1
+*.js
