@@ -1,0 +1,20 @@
+# Java
+*.class
+*.jar
+*.war
+target/
+
+# IDE
+.idea/
+*.iml
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# WorkBuddy
+.workbuddy-ai/
+
+# Maven
+log/
