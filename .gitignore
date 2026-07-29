@@ -10,11 +10,15 @@ target/
 *.iws
 
 # OS
-.DS_Store
 Thumbs.db
+.DS_Store
+*.swp
 
 # WorkBuddy
 .workbuddy-ai/
 
 # Maven
 log/
+
+# Temp scripts
+*.ps1
