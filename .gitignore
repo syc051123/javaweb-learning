@@ -22,3 +22,13 @@ log/
 
 # Temp scripts
 *.ps1
+
+# Reasonix 本地数据
+.reasonix/
+
+# 临时脚本
+note/anki/test_*.py
+note/anki/find_new_emp.py
+
+# 旧配置(含明文密码)
+day02/src/main/resources/_application.properties
