@@ -23,6 +23,9 @@
         </encoder>
     </appender>
 
+  <!-- 在 logback.xml 里加:让 MyBatis 的日志级别设高,少打 -->
+  <logger name="org.apache.ibatis" level="warn" />
+
     <!-- 日志级别:INFO 及以上输出(DEBUG/TRACE 被过滤) -->
     <root level="info">
         <appender-ref ref="STDOUT" />

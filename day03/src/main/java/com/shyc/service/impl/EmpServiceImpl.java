@@ -41,4 +41,18 @@ public class EmpServiceImpl implements EmpService {
         empMapper.deleteByIds(ids);
     }
 
+
+    @Override
+    public void updateEmp(Emp emp) {
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.updateEmp(emp);
+    }
+
+    @Override
+    public Emp selectById(Integer id) {
+        return empMapper.selectById(id);
+    }
+
+
+
 }

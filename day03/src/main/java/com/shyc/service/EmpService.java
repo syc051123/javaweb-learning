@@ -18,6 +18,12 @@ public interface EmpService {
     //删除员工
     void deleteEmp(List<Integer> ids);
 
+    //修改员工
+    void updateEmp(Emp emp);
+
+    //根据id查询员工
+    Emp selectById(Integer id);
+
 
 //分页查询员工
     PageBean page( EmpQueryParam param);
