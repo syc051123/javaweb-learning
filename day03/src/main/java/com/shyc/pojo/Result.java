@@ -33,4 +33,11 @@ public class Result {
         result.setMessage(message);
         return result;
     }
+    public static Result success(String message, Object data) {
+        Result result = new Result();
+        result.setCode(1);
+        result.setMessage(message);   // 用你传的提示语
+        result.setData(data);
+        return result;
+    }
 }

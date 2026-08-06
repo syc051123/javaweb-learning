@@ -1,6 +1,7 @@
 package com.shyc.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.ToString;
 
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 public class Emp {
     private Integer id;           // 主键
     private String username;        // 用户名
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ToString.Exclude
     private String password;      // 密码
 

@@ -27,4 +27,7 @@ public interface EmpService {
 
 //分页查询员工
     PageBean page( EmpQueryParam param);
+
+    //登录
+    Emp login(Emp emp);
 }

@@ -30,6 +30,10 @@ public interface EmpMapper {
     @Select("select *from emp where id =#{id}")
     Emp selectById(Integer id);
 
+    // 按用户名查用户(登录用)
+    @Select("select * from emp where username = #{username}")
+    Emp selectByUsername(String username);
+
     @Update("""
                 <script>
                 update emp set

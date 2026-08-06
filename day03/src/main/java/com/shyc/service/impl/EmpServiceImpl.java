@@ -8,6 +8,7 @@ import com.shyc.pojo.EmpQueryParam;
 import com.shyc.pojo.PageBean;
 import com.shyc.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,12 +22,26 @@ import java.util.List;
 public class EmpServiceImpl implements EmpService {
     @Autowired
     private EmpMapper empMapper;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
     @Override
     public PageBean page(EmpQueryParam param) {
         PageHelper.startPage(param.getPage(),param.getPageSize());
         List<Emp> empList =  empMapper.selectAll(param);
         PageInfo<Emp> pageInfo = new PageInfo<>(empList);
         return new PageBean(pageInfo.getTotal(),pageInfo.getList());
+    }
+
+    @Override
+    public Emp login(Emp emp) {
+        Emp empDB = empMapper.selectByUsername(emp.getUsername());
+
+        if(empDB==null){
+            return null;
+        }
+        boolean check=passwordEncoder.matches(emp.getPassword(),empDB.getPassword());
+      return check?empDB:null;
     }
 
     @Override

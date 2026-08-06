@@ -32,3 +32,7 @@ note/anki/find_new_emp.py
 
 # 旧配置(含明文密码)
 day02/src/main/resources/_application.properties
+
+# 笔记样张临时脚本
+note/anki/gen_docx_sample.py
+note/anki/jwt_preview.html
